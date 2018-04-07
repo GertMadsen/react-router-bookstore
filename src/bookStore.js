@@ -14,6 +14,10 @@ class BookStore {
     book.id = this._nextID;
     this._books.push(book);
     this._nextID++;
+  }  
+  removeBook(id){
+    var newBookList = this._books.filter( (book) => book.id !== id ) 
+    this._books = newBookList;
   }
 }
 let bookStore = new BookStore();
